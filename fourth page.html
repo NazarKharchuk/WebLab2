@@ -79,25 +79,10 @@
 </body>
 <script>
     let isItalic = false;
-    function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-                }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
 
     function OnLoadFunction(){
-        let ourCookie = getCookie("Italic");
-        if (ourCookie === "1") {
+        let ourData = localStorage.getItem("Italic");
+        if (ourData === "1") {
             isItalic = true;
             document.getElementById('forItalic').style.fontStyle = "italic";
         }
@@ -106,11 +91,11 @@
     function PressKey(e) {
         if(isItalic){
             document.getElementById('forItalic').style.fontStyle = "normal";
-            document.cookie = 'Italic=0;Expires=Thu, 01 Jan 2022 00:00:01 GMT;';
+            localStorage.setItem("Italic", 0);
             isItalic = false;
         }else{
             document.getElementById('forItalic').style.fontStyle = "italic";
-            document.cookie = 'Italic=1;Expires=Thu, 01 Jan 2022 00:00:01 GMT;';
+            localStorage.setItem("Italic", 1);
             isItalic = true;
         }
     }
