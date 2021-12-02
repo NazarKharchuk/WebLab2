@@ -12,6 +12,7 @@
             flex-direction: column;
             align-items:center;
             justify-content: center;
+            visibility: hidden;
         }
         form>p{
             margin-bottom: 20px;
@@ -25,7 +26,7 @@
         }
     </style>
 </head>
-<body>
+<body  onload="OnLoadFunction()">
     <div class="wrapper">
         <div class="notSix">
             <div class="notTwo">
@@ -100,9 +101,45 @@
             </div>
         </footer>
     </div>
-</body>
+</body">
 <script>
-    //alert(document.cookie);
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function OnLoadFunction(){
+        let ourCookie = getCookie("Count");
+        if (ourCookie != "") {
+            let check;
+            if (confirm("Раніше знайдена кількість повторів: " + ourCookie + "\nВидалити ці дані?")) {
+                check = true;
+            } else {
+                check = false;
+            }
+            if(check){
+                document.cookie = 'Count=0;Expires=Thu, 01 Jan 2019 00:00:01 GMT;';
+                alert('Дані видалено\nПерезавантажте документ');
+                //document.location.reload();
+            }else{
+                alert('Дані збережені\nПерезавантажте документ щоб мати можливість їх видалити');
+            }
+        } else {
+            document.getElementById('my_form').style.visibility = "visible";;
+        }
+    }
+
     function f(){
         //alert(document.cookie);
         var mass = [];
@@ -123,17 +160,8 @@
             count++;
         }while(mass[count] === mass[0]);
         alert('Мінімальне число: ' + mass[0] + ';\nПовторюється: ' + count + ' раз.');
-        //document.cookie = 'Count='+count;
 
-        document.cookie = 'NAME=Cat';
-        /*var date = new Date;
-        date.setDate(date.getDate() + 1); // прибавляем один день
-        date = date.toUTCString(); // преобразуем в формат UTC
-        document.cookie = 'NAME=Cat; expires=' + date;*/
-
-
-        alert(document.cookie);
-        console.log( document.cookie );
+        document.cookie = 'Count='+count+';Expires=Thu, 01 Jan 2022 00:00:01 GMT;';
     }
 </script>
 </html>
