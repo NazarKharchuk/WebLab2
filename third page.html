@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Task 3</title>
     <style>
         form{
             display: flex;
@@ -131,9 +131,9 @@
             if(check){
                 document.cookie = 'Count=0;Expires=Thu, 01 Jan 2019 00:00:01 GMT;';
                 alert('Дані видалено\nПерезавантажте документ');
-                //document.location.reload();
+                document.location.reload();
             }else{
-                alert('Дані збережені\nПерезавантажте документ щоб мати можливість їх видалити');
+                alert('Дані не видалено\nПерезавантажте документ щоб мати можливість їх видалити');
             }
         } else {
             document.getElementById('my_form').style.visibility = "visible";;
