@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="notSix">
+            <div class="notTwo">
+                <header>
+                    <div class="hederDiv">
+                        <h2>Second page</h2>
+                    </div>
+                    <p class="hederText">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptas, neque doloremque, labore fuga ullam nostrum odit quam quaerat ipsam aut doloribus similique maiores quae voluptates ipsa ut quis est. <br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur inventore neque modi quos! Asperiores, saepe esse. Possimus, asperiores adipisci voluptas magnam beatae quaerat autem voluptate ducimus odio illo repudiandae impedit!
+                    </p>
+                </header>
+                <div class="notOne">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="index.html">Сторінка №1</a></li>
+                            <li><a href="second page.html">Сторінка №2</a></li>
+                            <li><a href="third page.html">Сторінка №3</a></li>
+                            <li><a href="fourth page.html">Сторінка №4</a></li>
+                            <li><a href="fifth page.html">Сторінка №5</a></li>
+                        </ul>
+                    </nav>
+                    <div class="notThree">
+                        <figcaption>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloremque ad, nihil quidem non? Beatae earum sunt quod distinctio eveniet veritatis!</p>
+                        </figcaption>
+                        <main>
+                            <p id='for_result'>
+                                Напишіть функцію, яка обчислює площу прямокутника, <br> 
+                                беручи необхідні значення із відповідних змінних у скрипті, <br>
+                                і виводить отриманий результат в кінці контенту в блоці «5».
+                            </p>
+                            <img src="img/2.jpg" width="20%" alt="2">
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In nam earum reprehenderit consequuntur aliquid cumque natus eligendi harum ab eveniet optio animi fuga aliquam, molestias repudiandae ut officiis distinctio non. <br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error expedita molestiae eum excepturi similique ad impedit vitae magni neque. Corporis explicabo earum, hic assumenda fugit voluptatum beatae necessitatibus ex quos!<br>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime tempora qui modi odio dolorum distinctio et, incidunt eius quod, repellat doloribus accusamus facere asperiores debitis unde laboriosam vero blanditiis officiis. <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio animi consectetur temporibus amet molestiae blanditiis doloribus ea ipsam quia architecto, deserunt excepturi. Aliquam saepe repellat officiis! Recusandae minus ut obcaecati.
+                </p>
+            </aside>
+        </div>
+        <footer>
+            <p class="footerText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta a natus veritatis enim magnam amet quae voluptatum architecto, quaerat, blanditiis provident velit incidunt nostrum porro eius eos in culpa minima! <br>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim exercitationem quod autem facere officiis, officia id tenetur numquam  aperiam dolore natus nam delectus. Dicta. <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem dolorem nulla eius iusto consequuntur exercitationem, nam harum quos est velit! Eos veniam corporis, pariatur id ipsum debitis nam tenetur! <br>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ex tempora, magnam dolores dignissimos dolor reiciendis et obcaecati! Nam cum ex natus temporibus pariatur ducimus maxime dolorum molestias, aperiam assumenda.
+            </p>
+            <div class="footerDiv">
+                <h2>Second page</h2>
+            </div>
+            
+        </footer>
+    </div>
+</body>
+<script>
+    let a_length, b_length;
+    a_length = 7;
+    b_length = 8;
+    let S = func(a_length, b_length);
+    function func(int, int) {
+        let Result = a_length * b_length;
+        document.getElementById('for_result').innerHTML = document.getElementById('for_result').textContent + '<br><h3>Result = ' + Result + ' </h3>';
+        return Result;
+    }
+</script>
+</html>

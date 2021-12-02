@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="notSix">
+            <div class="notTwo">
+                <header>
+                    <div class="hederDiv" >
+                        <h2 id='blok_X'>Контент блоку X</h2>
+                    </div>
+                    <p class="hederText">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptas, neque doloremque, labore fuga ullam nostrum odit quam quaerat ipsam aut doloribus similique maiores quae voluptates ipsa ut quis est. 
+                    </p>
+                </header>
+                <div class="notOne">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="index.html">Сторінка №1</a></li>
+                            <li><a href="second page.html">Сторінка №2</a></li>
+                            <li><a href="third page.html">Сторінка №3</a></li>
+                            <li><a href="fourth page.html">Сторінка №4</a></li>
+                            <li><a href="fifth page.html">Сторінка №5</a></li>
+                        </ul>
+                    </nav>
+                    <div class="notThree">
+                        <figcaption>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloremque ad, nihil quidem non? Beatae earum sunt quod distinctio eveniet veritatis! <br>
+                            </p>
+                        </figcaption>
+                        <main>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quos porro facere amet ducimus fugiat dolorum, labore sapiente, cumque voluptatem quis eveniet totam et provident. Quo autem magni alias accusamus. <br>
+                             Sequi libero laborum, totam fuga, a vero accusamus, accusantium nam at eveniet nobis reiciendis quam officiis. Pariatur autem ratione suscipit ex provident. <br>
+                            </p>
+                            <img src="img/1.jpg" width="20%" alt="1">
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In nam earum reprehenderit consequuntur aliquid cumque natus eligendi harum ab eveniet optio animi fuga aliquam, molestias repudiandae ut officiis distinctio non. <br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos voluptates dolorum animi minus? Soluta, quaerat. Fugiat placeat, recusandae vitae, repellendus harum autem hic facilis, sit mollitia voluptatum deleniti sequi perferendis?
+                </p>
+            </aside>
+        </div>
+        <footer>
+            <p class="footerText">
+                Поміняйте місцями контент блоків «х» та «у».
+            </p>
+            <input type="button" id="my_button" value="Помінятu">
+            <script>
+                my_button.onclick = function() {
+                    let temp = document.getElementById('blok_X').textContent;
+                    document.getElementById('blok_X').innerHTML = document.getElementById('blok_Y').textContent;
+                    document.getElementById('blok_Y').innerHTML = temp;
+                };
+            </script>
+            <div class="footerDiv">
+                <h2 id='blok_Y'>Контент блоку Y</h2>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

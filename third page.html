@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+        }
+        form>p{
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        #my_button{
+            margin: 10px 10px 10px;
+        }
+        #my_reset{
+            margin: 0 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="notSix">
+            <div class="notTwo">
+                <header>
+                    <div class="hederDiv">
+                        <h2>Third page</h2>
+                    </div>
+                    <p class="hederText">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptas, neque doloremque, labore fuga ullam nostrum odit quam quaerat ipsam aut doloribus similique maiores quae voluptates ipsa ut quis est. 
+                    </p>
+                </header>
+                <div class="notOne">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="index.html">Сторінка №1</a></li>
+                            <li><a href="second page.html">Сторінка №2</a></li>
+                            <li><a href="third page.html">Сторінка №3</a></li>
+                            <li><a href="fourth page.html">Сторінка №4</a></li>
+                            <li><a href="fifth page.html">Сторінка №5</a></li>
+                        </ul>
+                    </nav>
+                    <div class="notThree">
+                        <figcaption>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloremque ad, nihil quidem non? Beatae earum sunt quod distinctio eveniet veritatis!</p>
+                        </figcaption>
+                        <main>
+                            <form action="" id="my_form">
+                                <p><b> Kількість мінімальних чисел із 10 значень:</b></p>
+                                <input type="number" name="digit1" id="digit1" placeholder="Digit №1">
+                                <input type="number" name="digit2" id="digit2" placeholder="Digit №2">
+                                <input type="number" name="digit3" id="digit3" placeholder="Digit №3">
+                                <input type="number" name="digit4" id="digit4" placeholder="Digit №4">
+                                <input type="number" name="digit5" id="digit5" placeholder="Digit №5">
+                                <input type="number" name="digit6" id="digit6" placeholder="Digit №6">
+                                <input type="number" name="digit7" id="digit7" placeholder="Digit №7">
+                                <input type="number" name="digit8" id="digit8" placeholder="Digit №8">
+                                <input type="number" name="digit9" id="digit9" placeholder="Digit №9">
+                                <input type="number" name="digit10" id="digit10" placeholder="Digit №10">
+                                <input  type="button" id="my_button" onclick="f()" value="Знайти кількість">
+                                <input type="reset" id="my_reset" value="Очистити">
+                            </form>
+                            <img src="img/3.jpg" width="20%" alt="3">
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <p>Напишіть скрипт, який визначає кількість
+                    мінімальних чисел із 10 значень, беручи необхідні
+                    значення із відповідної форми в блоці «5», а
+                    отриманий результат виводить за допомогою
+                    діалогового вікна і зберігає в куках, причому:
+                    <br><B>а)</B> при оновленні документа в броузері користувачу
+                    за допомогою діалогового вікна виводиться інформація, збережена в куках, із
+                    питанням про необхідність зберегти дані із куків, і не виводиться згадана вище
+                    форма;
+                    <br><b>б)</b> при підтвердженні питання виводиться наступне діалогове вікно із
+                    інформуванням користувача про наявність куків і необхідність
+                    перезавантаження документа;
+                    <br><b>в)</b> при відмові відповідні куки видаляються, і документ оновлюється з
+                    початковим станом із наявною формою для введення даних.
+                </p>
+            </aside>
+        </div>
+        <footer>
+            <p class="footerText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta a natus veritatis enim magnam amet quae voluptatum architecto, quaerat, blanditiis provident velit incidunt nostrum porro eius eos in culpa minima! <br>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim exercitationem quod autem facere officiis, officia id tenetur numquam  aperiam dolore natus nam delectus. Dicta.
+            </p>
+            <div class="footerDiv">
+                <h2>Third page</h2>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    //alert(document.cookie);
+    function f(){
+        //alert(document.cookie);
+        var mass = [];
+        mass.arrayLength=10;
+        mass[0]=document.getElementById('digit1').value === "" ? "0" : document.getElementById('digit1').value;
+        mass[1]=document.getElementById('digit2').value === "" ? "0" : document.getElementById('digit2').value;
+        mass[2]=document.getElementById('digit3').value === "" ? "0" : document.getElementById('digit3').value;
+        mass[3]=document.getElementById('digit4').value === "" ? "0" : document.getElementById('digit4').value;
+        mass[4]=document.getElementById('digit5').value === "" ? "0" : document.getElementById('digit5').value;
+        mass[5]=document.getElementById('digit6').value === "" ? "0" : document.getElementById('digit6').value;
+        mass[6]=document.getElementById('digit7').value === "" ? "0" : document.getElementById('digit7').value;
+        mass[7]=document.getElementById('digit8').value === "" ? "0" : document.getElementById('digit8').value;
+        mass[8]=document.getElementById('digit9').value === "" ? "0" : document.getElementById('digit9').value;
+        mass[9]=document.getElementById('digit10').value === "" ? "0" : document.getElementById('digit10').value;
+        mass.sort(function(a,b){return a - b;});
+        var count=0;
+        do{
+            count++;
+        }while(mass[count] === mass[0]);
+        alert('Мінімальне число: ' + mass[0] + ';\nПовторюється: ' + count + ' раз.');
+        //document.cookie = 'Count='+count;
+
+        document.cookie = 'NAME=Cat';
+        /*var date = new Date;
+        date.setDate(date.getDate() + 1); // прибавляем один день
+        date = date.toUTCString(); // преобразуем в формат UTC
+        document.cookie = 'NAME=Cat; expires=' + date;*/
+
+
+        alert(document.cookie);
+        console.log( document.cookie );
+    }
+</script>
+</html>
