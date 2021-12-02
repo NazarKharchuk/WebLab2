@@ -5,7 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Task 5</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            visibility: hidden;
+        }
+        form>input{
+            margin: 10px 10px 10px;
+        }
+        form>p{
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        #my_button{
+            margin: 10px 10px 10px;
+        }
+        #my_reset{
+            margin: 10px 10px 30px;
+        }
+        article{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -34,10 +62,14 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloremque ad, nihil quidem non? Beatae earum sunt quod distinctio eveniet veritatis!</p>
                         </figcaption>
                         <main>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quos porro facere amet ducimus fugiat dolorum, labore sapiente, cumque voluptatem quis eveniet totam et provident. Quo autem magni alias accusamus. <br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eos obcaecati eius totam ullam omnis dolorum numquam sed aperiam dolore eveniet modi quas veniam quisquam? Perferendis dignissimos expedita quis facilis. <br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo numquam aliquam harum, quasi ipsa impedit ab totam, similique itaque amet aliquid tempore voluptate unde laboriosam eos incidunt deleniti? Enim, consectetur!
-                            </p>
+                            <form action="" id="my_form">
+                                <p><b> Додати задані атрибути до заданих тегів:</b></p>
+                                <input type="text" name="Tag" id="TagID" placeholder="Тег">
+                                <input type="text" name="Atribyte" id="AtribyteID" placeholder="Атрибут">
+                                <input type="text" name="Value" id="ValueID" placeholder="Значення атрибута">
+                                <input  type="button" id="my_button" onclick="f()" value="Додати">
+                                <input type="reset" id="my_reset" value="Очистити">
+                            </form>
                             <img src="img/5.jpg" width="20%" alt="5">
                         </main>
                     </div>
@@ -55,6 +87,7 @@
                     натискання якої ця CSS- інструкція видаляється із локального сховища броузера
                     і її вплив на відповідний тег припиняється - без перезавантаження документа.
                 </p>
+                <article></article>
             </aside>
         </div>
         <footer>
@@ -62,13 +95,59 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta a natus veritatis enim magnam amet quae voluptatum architecto, quaerat, blanditiis provident velit incidunt nostrum porro eius eos in culpa minima! <br>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim exercitationem quod autem facere officiis, officia id tenetur numquam  aperiam dolore natus nam delectus. Dicta.
             </p>
-            <div class="footerDiv">
+            <div class="footerDiv" ondblclick = "DClisk()">
                 <h2>Fifth page</h2>
             </div>
         </footer>
     </div>
 </body>
 <script>
+    localStorage.clear();
+    let count = 1;
+    function DClisk(){
+        document.getElementById('my_form').style.visibility = "visible";
+    };
     
+    function f(){
+        var tag_value = document.getElementById('TagID').value;
+        var atribyte_value = document.getElementById('AtribyteID').value;
+        var value_value = document.getElementById('ValueID').value; 
+
+        var elems = document.body.getElementsByTagName(tag_value);
+        for(var i = 0; i < elems.length; i++)
+        {
+            elems[i].setAttribute(atribyte_value, value_value);
+        }
+        localStorage.setItem(count+'', tag_value+';'+atribyte_value+';'+value_value+';');
+        
+        var button = document.createElement("button");
+        button.innerHTML = count;
+
+        var body = document.getElementsByTagName("article")[0];
+        body.appendChild(button);
+
+        button.addEventListener ("click", function() {
+            let name = button.innerText;
+            let addy = localStorage.getItem(name+'');
+            localStorage.removeItem(name+'');
+            var s1= addy.substr(0, addy.indexOf(';'));
+            //console.log(s1);
+            let s11=addy.substr(addy.indexOf(';')+1, addy.length);
+            var s2= s11.substr(0, s11.indexOf(';'));
+            //console.log(s2);
+            let s21=s11.substr(s11.indexOf(';')+1, s11.length);
+            var s3= s21.substr(0, s21.indexOf(';'));
+            //console.log(s3);
+            var elems = document.body.getElementsByTagName(s1);
+            for(var i = 0; i < elems.length; i++)
+            {
+                elems[i].removeAttribute(s2);
+            }
+            button.style.visibility= "hidden";
+        });
+
+        count = count+1;
+    }
+
 </script>
 </html>
